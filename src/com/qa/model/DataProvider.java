@@ -24,7 +24,18 @@ public class DataProvider {
 		return products;
 	}
 
-	private static List<Product> getProductsWithOffers() {
+	public static Product[] getProductNames() {
+		List<Product> products = getProductsWithOffers();
+		Product[] productNames = new Product[products.size()];
+
+		for (int j = 0; j < productNames.length; j++) {
+			productNames[j] = products.get(j);
+		}
+		return productNames;
+
+	}
+
+	public static List<Product> getProductsWithOffers() {
 		Map<Integer, Integer> offers = getProductOffers();
 		// TODO Use the stream interface to filter the list of offers
 		List<Product> productsWithOffers = new ArrayList<Product>();
